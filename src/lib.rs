@@ -93,18 +93,16 @@ pub struct Package {
 
 pub struct LingLongClient;
 
-impl LingLongClient {
-    pub async fn search(
-        proxy: &PackageManager1Proxy<'_>,
-        query: &str,
-    ) -> Result<SearchResult, zbus::Error> {
-        let mut map = HashMap::new();
-        let binding = zbus::zvariant::Value::Str(query.into());
-        map.insert("id", &binding);
+pub async fn search(
+    proxy: &PackageManager1Proxy<'_>,
+    query: &str,
+) -> Result<SearchResult, zbus::Error> {
+    let mut map = HashMap::new();
+    let binding = zbus::zvariant::Value::Str(query.into());
+    map.insert("id", &binding);
 
-        let res = proxy.search(map).await?;
-        let res = SearchResult::try_from(res)?;
+    let res = proxy.search(map).await?;
+    let res = SearchResult::try_from(res)?;
 
-        Ok(res)
-    }
+    Ok(res)
 }
