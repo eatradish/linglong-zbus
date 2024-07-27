@@ -469,7 +469,6 @@ dependencies = [
  "serde",
  "tokio",
  "zbus",
- "zvariant",
 ]
 
 [[package]]

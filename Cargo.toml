@@ -6,7 +6,6 @@ edition = "2021"
 [dependencies]
 zbus = "4"
 serde = { version = "1", features = ["derive"] }
-zvariant = "4.2.0"
 
 [dev-dependencies]
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }

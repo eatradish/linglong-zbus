@@ -22,6 +22,7 @@
 use std::collections::HashMap;
 
 use zbus::proxy;
+
 #[proxy(
     interface = "org.deepin.linglong.PackageManager1",
     default_service = "org.deepin.linglong.PackageManager",
@@ -74,7 +75,5 @@ trait PackageManager1 {
 
     /// Configuration property
     #[zbus(property)]
-    fn configuration(
-        &self,
-    ) -> zbus::Result<HashMap<String, zbus::zvariant::OwnedValue>>;
+    fn configuration(&self) -> zbus::Result<HashMap<String, zbus::zvariant::OwnedValue>>;
 }
