@@ -91,8 +91,6 @@ pub struct Package {
     archs: Vec<String>,
 }
 
-pub struct LingLongClient;
-
 pub async fn search(
     proxy: &PackageManager1Proxy<'_>,
     query: &str,
